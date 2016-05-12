@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+  <script data-require="angular.js@1.5.5" data-semver="1.5.5" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <link href="style.css" rel="stylesheet" />
+  <script src="script.js"></script>
+</head>
+
+<body ng-controller="mainController">
+  <div id="mainDiv">
+    <table id="mainTable" ng-repeat="post in postsList | orderBy: 'title' | limitTo : currentPosts ">
+      <tr>
+        <td ng-click="openPost(this.post)">
+          <div class="leftSide" ng-bind="'user#  ' + post.userId"></div>
+          <div class="rightSide" ng-bind="'post id ' + post.id"></div>
+          <div class="body" ng-bind="post.body | limitTo : postLength"></div>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div id="selected">
+    <div id="selectedPost">
+      <input id="close" type="button" value="X" ng-click="closeSelectedPost()" />
+      <div class="leftSide" ng-bind="'user#  ' + userId"></div>
+      <div class="rightSide" ng-bind="'post id ' + id"></div>
+      <br />
+      <br />
+      <div class="body" ng-bind="body"></div>
+    </div>
+  </div>
+  
+  <div class="center">
+  <input id="more" ng-disabled="currentPosts == postsList.length" type="button" value="+10" ng-click="morePosts()" />
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+body {
+  background-image: url("http://www.w3schools.com/cssref/paper.gif");
+}
+
+td {
+  background-color: #ffffff;
+}
+
+td,
+input[type=button] {
+  cursor: pointer;
+}
+
+#mainDiv {
+  position: relative;
+  margin: auto;
+  max-width: 500px;
+}
+
+#more {
+  position: relative;
+}
+
+.center {
+  text-align: center;
+}
+
+.body {
+  clear: both;
+  font-size: 18px;
+}
+
+.leftSide {
+  float: left;
+}
+
+.rightSide {
+  float: right;
+}
+
+#close {
+  float: right;
+  margin-right: -40px;
+  margin-top: -35px;
+}
+
+#selectedPost {
+  cursor: default;
+  position: fixed;
+  left: 15%;
+  top: 25%;
+  width: 70%;
+  background-color: #ffffff;
+  padding: 10px;
+}
+
+#selected {
+  visibility: hidden;
+  background-color: rgba(0, 0, 0, 0.55);
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
